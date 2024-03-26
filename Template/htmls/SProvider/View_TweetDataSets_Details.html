@@ -1,0 +1,100 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+        .style5 {color: #FFFF00}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-15">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">VIEW ALL TWEETS DATA SET DETAILS  !!! </p>
+                            <hr>
+                            <div class="tweettext">
+                                <table border="5" bordercolor="#FF00FF">
+                      <tr><td bgcolor="#FF0000"><span class="style8 style5"> User Name</span></td>
+                      <td bgcolor="#FF0000"><span class="style8 style5">DOB</span></td>
+                      <td bgcolor="#FF0000"><span class="style8 style5">Gender</span></td>
+                      <td bgcolor="#FF0000"><span class="style8 style5">Address</span></td>
+                          <td bgcolor="#FF0000"><span class="style8 style5">Location</span></td>
+                          <td bgcolor="#FF0000"><span class="style8 style5">EMail Id</span></td>
+                          <td bgcolor="#FF0000"><span class="style8 style5">Mobile Number</span></td>
+                          <td bgcolor="#FF0000"><span class="style8 style5">Tweet Name</span></td>
+                          <td bgcolor="#FF0000"><span class="style8 style5">Tweet Desc</span></td>
+                          <td bgcolor="#FF0000"><span class="style8 style5">Tweet Location</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Tweet Date</span></td>
+                          <td bgcolor="#FF0000"><span class="style8">Tweet Score</span></td>
+                      </tr>
+
+                            {% for object in list_objects %}
+                      <tr>
+                                          <td style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.uname}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.dob}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px;  "><div align="center">{{object.gender}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.address}}</div></td>
+                                         <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.location}}</div></td>
+                                        <td bgcolor="#FF0000" style="font-family:monospace; font-size:19px; "><div align="center">{{object.mailid}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.mobile_no}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.names}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.tweet_desc}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.tweet_loc}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.tweet_date}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center">{{object.score}}</div></td>
+                                  </tr>
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
